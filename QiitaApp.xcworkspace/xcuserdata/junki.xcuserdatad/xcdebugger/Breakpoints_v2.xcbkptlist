@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QiitaApp/ArticleListViewController.swift"
+            timestampString = "495512738.86075"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ArticleListViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QiitaApp.ArticleListViewController.init (style : __C.UITableViewStyle) -&gt; QiitaApp.ArticleListViewController"
+                  moduleName = "QiitaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junki/Desktop/kadai/QiitaApp/QiitaApp/ArticleListViewController.swift"
+                  timestampString = "495512776.65989"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QiitaApp.ArticleListViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; QiitaApp.ArticleListViewController"
+                  moduleName = "QiitaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junki/Desktop/kadai/QiitaApp/QiitaApp/ArticleListViewController.swift"
+                  timestampString = "495512776.660041"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QiitaApp.ArticleListViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;QiitaApp.ArticleListViewController&gt;"
+                  moduleName = "QiitaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junki/Desktop/kadai/QiitaApp/QiitaApp/ArticleListViewController.swift"
+                  timestampString = "495512776.660178"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
