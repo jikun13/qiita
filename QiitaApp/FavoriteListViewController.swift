@@ -108,17 +108,19 @@ class FavoriteListViewController: UITableViewController {
             do{
                 let realm = try Realm()
                 
-                let articles = realm.objects(ArticleData)
-                try realm.write {
-                    realm.delete()
+                if let deleteUrl = self.favoriteArticles[indexPath.row].url {
+                    let articles = realm.objects(ArticleData).filter("url = '\(deleteUrl)'")
+                    print(articles)
+                    try realm.write {
+                        realm.delete(articles)
+                        print("消すぞー")
+                    }
                 }
             }catch{
                 print("失敗")
             }
         }
-        favButton.backgroundColor = UIColor.greenColor()
-        
-        
+        favButton.backgroundColor = UIColor.redColor()
         
         return [favButton]
     }
