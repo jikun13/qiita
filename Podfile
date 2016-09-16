@@ -8,4 +8,5 @@ target 'QiitaApp' do
   # Pods for QiitaApp
   pod 'Alamofire', '~> 3.5.0'
   pod 'SwiftyJSON'
+  pod 'RealmSwift'
 end

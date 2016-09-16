@@ -10,12 +10,18 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ArticleListViewController: UITableViewController {
+class ArticleListViewController: UITableViewController, UISearchBarDelegate {
     
     // 記事を入れるプロバティを定義
     var articles: [[String: String?]] = []
     
     var imageCache = NSCache()
+    
+    //APIを利用するためのアプリケーションID
+    let qiitaId: String = "ashidaka"
+    
+    //APIのURL
+    let entryUrl: String = "https://qiita.com/api/v2/items"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +32,7 @@ class ArticleListViewController: UITableViewController {
         refresh.addTarget(self, action: #selector(ArticleListViewController.refreshTable), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refresh
                 
-        self.getArticles()
+        self.getArticles(entryUrl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,14 +41,16 @@ class ArticleListViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // 引っ張って画面更新
     func refreshTable() {
         sleep(2)
-        self.getArticles()
+        self.getArticles(entryUrl)
         refreshControl?.endRefreshing()
     }
     
-    func getArticles() {
-        Alamofire.request(.GET, "https://qiita.com/api/v2/items")
+    // 記事の取得＆描画
+    func getArticles(url: String) {
+        Alamofire.request(.GET, url)
             .responseJSON { response in
                 guard let object = response.result.value else {
                     return
@@ -61,8 +69,53 @@ class ArticleListViewController: UITableViewController {
                     self.articles.append(article)
                 }
                 self.tableView.reloadData()
-//                print(self.articles)
         }
+    }
+    
+    // MARK: - search bar delegate
+    //キーボードのsearchボタンがタップされた時に呼び出される
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        //商品検索を行なう
+        let inputText = searchBar.text
+        //入力文字数が0文字以上かどうかチェックする
+        if inputText?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+            //保持している商品を一旦削除
+            self.articles.removeAll()
+            
+            //パラメータを指定する
+            let parameter = ["id":qiitaId, "query":inputText]
+            
+            //パラメータをエンコードしたURLを作成する
+            let requestUrl = createRequestUrl(parameter)
+            
+            //APIをリクエストする
+            getArticles(requestUrl)
+        }
+        //キーボードを閉じる
+        searchBar.resignFirstResponder()
+    }
+
+    //URL作成処理
+    func createRequestUrl(parameter :[String:String?]) -> String {
+        var parameterString = ""
+        for key in parameter.keys {
+            if let value = parameter[key] {
+                //既にパラメータが設定されていた場合
+                if parameterString.lengthOfBytesUsingEncoding(
+                    NSUTF8StringEncoding) > 0 {
+                    parameterString += "&"
+                }
+                
+                //値をエンコードする
+                if let escapedValue =
+                    value!.stringByAddingPercentEncodingWithAllowedCharacters(
+                        NSCharacterSet.URLQueryAllowedCharacterSet()) {
+                    parameterString += "\(key)=\(escapedValue)"
+                }
+            }
+        }
+        let requestUrl = entryUrl + "?" + parameterString
+        return requestUrl
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -113,6 +166,18 @@ class ArticleListViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
+    }
+    
+    // 記事を左にスワイプするとお気に入り登録ボタンが表示されるようにする
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        // お気に入り追加ボタン
+        let favButton: UITableViewRowAction = UITableViewRowAction(style: .Normal, title: "fav") { (action, index) -> Void in
+            tableView.editing = false
+            print("fav")
+        }
+        favButton.backgroundColor = UIColor.blueColor()
+        
+        return [favButton]
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
