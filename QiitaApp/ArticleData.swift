@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import RealmSwift
 
-class ArticleData {
+class ArticleData: Object {
+    // 記事URL
+    dynamic var url: String?
     // サムネイルURL
-    var articleThumbnailUrl: String?
+    dynamic var thumbnailUrl: String?
     // 記事タイトル
-    var articleTitle: String?
+    dynamic var title: String?
     // ユーザID
-    var userID: String?
+    dynamic var userId: String?
 }

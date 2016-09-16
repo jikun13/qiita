@@ -9,11 +9,13 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class ArticleListViewController: UITableViewController, UISearchBarDelegate {
     
     // 記事を入れるプロバティを定義
-    var articles: [[String: String?]] = []
+//    var articles: [[String: String?]] = []
+    var articles = [ArticleData]()
     
     var imageCache = NSCache()
     
@@ -60,12 +62,13 @@ class ArticleListViewController: UITableViewController, UISearchBarDelegate {
                 
                 let json = JSON(object)
                 json.forEach { (_, json) in
-                    let article: [String: String?] = [
-                        "title": json["title"].string,
-                        "userId": json["user"]["id"].string,
-                        "image": json["user"]["profile_image_url"].string,
-                        "url": json["url"].string
-                    ]
+                    let article = ArticleData()
+                    
+                    article.url = json["url"].string
+                    article.thumbnailUrl = json["user"]["profile_image_url"].string
+                    article.title = json["title"].string
+                    article.userId = json["user"]["id"].string
+                    
                     self.articles.append(article)
                 }
                 self.tableView.reloadData()
@@ -123,12 +126,12 @@ class ArticleListViewController: UITableViewController, UISearchBarDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("ArticleCell", forIndexPath: indexPath) as! ArticleTableViewCell
         let articleData = articles[indexPath.row] // 行数番目の記事を取得
         
-        cell.articleTitleLabel.text = articleData["title"]!
+        cell.articleTitleLabel.text = articleData.title
         cell.articleTitleLabel.numberOfLines = 0;
-        cell.articleUserIdLabel.text = articleData["userId"]!
-        cell.articleUrl = articleData["url"]!
+        cell.articleUserIdLabel.text = articleData.userId
+        cell.articleUrl = articleData.url
         
-        if let itemImageUrl = articleData["image"]! {
+        if let itemImageUrl = articleData.thumbnailUrl {
             //キャッシュの画像を取り出す
             if let cacheImage = imageCache.objectForKey(itemImageUrl) as? UIImage {
                 //キャッシュの画像を設定
@@ -171,11 +174,20 @@ class ArticleListViewController: UITableViewController, UISearchBarDelegate {
     // 記事を左にスワイプするとお気に入り登録ボタンが表示されるようにする
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         // お気に入り追加ボタン
-        let favButton: UITableViewRowAction = UITableViewRowAction(style: .Normal, title: "fav") { (action, index) -> Void in
+        let favButton: UITableViewRowAction = UITableViewRowAction(style: .Normal, title: "★") { (action, index) -> Void in
             tableView.editing = false
-            print("fav")
+
+            // 選んだ行のデータをお気に入りリストに入れる
+            do{
+               let realm = try Realm()
+               try realm.write {
+                   realm.add(self.articles[indexPath.row])
+                }
+            }catch{
+                print("失敗")
+            }
         }
-        favButton.backgroundColor = UIColor.blueColor()
+        favButton.backgroundColor = UIColor.greenColor()
         
         return [favButton]
     }
