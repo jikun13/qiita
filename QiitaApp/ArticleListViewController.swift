@@ -14,7 +14,6 @@ import RealmSwift
 class ArticleListViewController: UITableViewController, UISearchBarDelegate {
     
     // 記事を入れるプロバティを定義
-//    var articles: [[String: String?]] = []
     var articles = [ArticleData]()
     
     var imageCache = NSCache()
@@ -28,12 +27,14 @@ class ArticleListViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.registerNib(UINib(nibName: "CustomCellTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+        
         let refresh = UIRefreshControl()
         refresh.attributedTitle = NSAttributedString(string: "更新中")
         refresh.tintColor = UIColor.grayColor()
         refresh.addTarget(self, action: #selector(ArticleListViewController.refreshTable), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refresh
-                
+        
         self.getArticles(entryUrl)
     }
 
@@ -123,9 +124,9 @@ class ArticleListViewController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("ArticleCell", forIndexPath: indexPath) as! ArticleTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CustomCell", forIndexPath: indexPath) as! CustomCellTableViewCell
         let articleData = articles[indexPath.row] // 行数番目の記事を取得
-        
+
         cell.articleTitleLabel.text = articleData.title
         cell.articleTitleLabel.numberOfLines = 0;
         cell.articleUserIdLabel.text = articleData.userId
@@ -135,7 +136,7 @@ class ArticleListViewController: UITableViewController, UISearchBarDelegate {
             //キャッシュの画像を取り出す
             if let cacheImage = imageCache.objectForKey(itemImageUrl) as? UIImage {
                 //キャッシュの画像を設定
-                cell.articleThumbnailView.image = cacheImage
+                cell.articleImageView.image = cacheImage
             } else {
                 //画像のダウンロード処理
                 let session = NSURLSession.sharedSession()
@@ -150,7 +151,7 @@ class ArticleListViewController: UITableViewController, UISearchBarDelegate {
                                     self.imageCache.setObject(image, forKey: itemImageUrl)
                                     //画像はメインスレッド上で設定する
                                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                        cell.articleThumbnailView.image = image
+                                        cell.articleImageView.image = image
                                     })
                                 }
                             }

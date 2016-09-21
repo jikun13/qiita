@@ -19,6 +19,8 @@
 		3AE724811D87EA04007F3D86 /* ArticleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE724801D87EA04007F3D86 /* ArticleData.swift */; };
 		3AE787F21D8A8F5D00AE5B59 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE787F11D8A8F5D00AE5B59 /* FavoriteListViewController.swift */; };
 		3AECAFB81D8BAC8E00395F27 /* FavoriteArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECAFB71D8BAC8E00395F27 /* FavoriteArticleTableViewCell.swift */; };
+		3AECAFBB1D921D1200395F27 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECAFB91D921D1200395F27 /* CustomCellTableViewCell.swift */; };
+		3AECAFBC1D921D1200395F27 /* CustomCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AECAFBA1D921D1200395F27 /* CustomCellTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		3AE724801D87EA04007F3D86 /* ArticleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleData.swift; sourceTree = "<group>"; };
 		3AE787F11D8A8F5D00AE5B59 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 		3AECAFB71D8BAC8E00395F27 /* FavoriteArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteArticleTableViewCell.swift; sourceTree = "<group>"; };
+		3AECAFB91D921D1200395F27 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
+		3AECAFBA1D921D1200395F27 /* CustomCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCellTableViewCell.xib; sourceTree = "<group>"; };
 		90E9A97FA29A7793FE6B9D8A /* Pods_QiitaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QiitaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08DD86005A93A8DE486C850 /* Pods-QiitaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiitaApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QiitaApp/Pods-QiitaApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				3AE724801D87EA04007F3D86 /* ArticleData.swift */,
+				3AECAFB91D921D1200395F27 /* CustomCellTableViewCell.swift */,
+				3AECAFBA1D921D1200395F27 /* CustomCellTableViewCell.xib */,
 				3A9BD0521D878888001BB384 /* AppDelegate.swift */,
 				3AE7247D1D87D7D2007F3D86 /* ArticleListViewController.swift */,
 				3AE787F11D8A8F5D00AE5B59 /* FavoriteListViewController.swift */,
@@ -172,6 +178,7 @@
 			files = (
 				3A9BD05D1D878888001BB384 /* LaunchScreen.storyboard in Resources */,
 				3A9BD05A1D878888001BB384 /* Assets.xcassets in Resources */,
+				3AECAFBC1D921D1200395F27 /* CustomCellTableViewCell.xib in Resources */,
 				3A9BD0581D878888001BB384 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +243,7 @@
 				3AE724811D87EA04007F3D86 /* ArticleData.swift in Sources */,
 				3AECAFB81D8BAC8E00395F27 /* FavoriteArticleTableViewCell.swift in Sources */,
 				3AD362B01D891EF100E88B02 /* WebViewController.swift in Sources */,
+				3AECAFBB1D921D1200395F27 /* CustomCellTableViewCell.swift in Sources */,
 				3AE7247E1D87D7D2007F3D86 /* ArticleListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
