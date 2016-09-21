@@ -17,7 +17,6 @@
 		3AD9B6C41D87B6E000871551 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD9B6C31D87B6E000871551 /* SwiftyJSON.framework */; };
 		3AE7247E1D87D7D2007F3D86 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE7247D1D87D7D2007F3D86 /* ArticleListViewController.swift */; };
 		3AE724811D87EA04007F3D86 /* ArticleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE724801D87EA04007F3D86 /* ArticleData.swift */; };
-		3AE724831D87EADC007F3D86 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE724821D87EADC007F3D86 /* ArticleTableViewCell.swift */; };
 		3AE787F21D8A8F5D00AE5B59 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE787F11D8A8F5D00AE5B59 /* FavoriteListViewController.swift */; };
 		3AECAFB81D8BAC8E00395F27 /* FavoriteArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECAFB71D8BAC8E00395F27 /* FavoriteArticleTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +34,6 @@
 		3AD9B6C31D87B6E000871551 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/QiitaApp-bkwqmbtyucadtdfogpyavlvtvyzt/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		3AE7247D1D87D7D2007F3D86 /* ArticleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		3AE724801D87EA04007F3D86 /* ArticleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleData.swift; sourceTree = "<group>"; };
-		3AE724821D87EADC007F3D86 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		3AE787F11D8A8F5D00AE5B59 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 		3AECAFB71D8BAC8E00395F27 /* FavoriteArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteArticleTableViewCell.swift; sourceTree = "<group>"; };
 		90E9A97FA29A7793FE6B9D8A /* Pods_QiitaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QiitaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +87,6 @@
 				3AE724801D87EA04007F3D86 /* ArticleData.swift */,
 				3A9BD0521D878888001BB384 /* AppDelegate.swift */,
 				3AE7247D1D87D7D2007F3D86 /* ArticleListViewController.swift */,
-				3AE724821D87EADC007F3D86 /* ArticleTableViewCell.swift */,
 				3AE787F11D8A8F5D00AE5B59 /* FavoriteListViewController.swift */,
 				3AECAFB71D8BAC8E00395F27 /* FavoriteArticleTableViewCell.swift */,
 				3AD362AF1D891EF100E88B02 /* WebViewController.swift */,
@@ -234,7 +231,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AE724831D87EADC007F3D86 /* ArticleTableViewCell.swift in Sources */,
 				3A9BD0531D878888001BB384 /* AppDelegate.swift in Sources */,
 				3AE787F21D8A8F5D00AE5B59 /* FavoriteListViewController.swift in Sources */,
 				3AE724811D87EA04007F3D86 /* ArticleData.swift in Sources */,

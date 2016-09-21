@@ -14,8 +14,6 @@ class FavoriteArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var favoriteArticleTitleLabel: UILabel!
     @IBOutlet weak var favoriteArticleUserIdLabel: UILabel!
     
-    var favoriteArticleUrl: String?
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
