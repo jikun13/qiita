@@ -18,6 +18,8 @@ class FavoriteListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.registerNib(UINib(nibName: "CustomCellTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -58,19 +60,19 @@ class FavoriteListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("FavoriteArticleCell", forIndexPath: indexPath) as! FavoriteArticleTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CustomCell", forIndexPath: indexPath) as! CustomCellTableViewCell
         let articleData = favoriteArticles[indexPath.row] // 行数番目の記事を取得
         
-        cell.favoriteArticleTitleLabel.text = articleData.title
-        cell.favoriteArticleTitleLabel.numberOfLines = 0;
-        cell.favoriteArticleUserIdLabel.text = articleData.userId
-        cell.favoriteArticleUrl = articleData.url
+        cell.articleTitleLabel.text = articleData.title
+        cell.articleTitleLabel.numberOfLines = 0;
+        cell.articleUserIdLabel.text = articleData.userId
+        cell.articleUrl = articleData.url
         
         if let itemImageUrl = articleData.thumbnailUrl {
             //キャッシュの画像を取り出す
             if let cacheImage = imageCache.objectForKey(itemImageUrl) as? UIImage {
                 //キャッシュの画像を設定
-                cell.favoriteArticleThumbnailView.image = cacheImage
+                cell.articleImageView.image = cacheImage
             } else {
                 //画像のダウンロード処理
                 let session = NSURLSession.sharedSession()
@@ -85,7 +87,7 @@ class FavoriteListViewController: UITableViewController {
                                     self.imageCache.setObject(image, forKey: itemImageUrl)
                                     //画像はメインスレッド上で設定する
                                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                        cell.favoriteArticleThumbnailView.image = image
+                                        cell.articleImageView.image = image
                                     })
                                 }
                             }

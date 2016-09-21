@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="109" id="KGk-i7-Jjw" customClass="CustomCellTableViewCell" customModule="QiitaApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="407" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="407" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="haB-Hh-WrW">
+                        <rect key="frame" x="10" y="10" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="MEn-bO-gd3"/>
+                            <constraint firstAttribute="width" constant="100" id="h0j-7z-drc"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4W-Wu-yfv">
+                        <rect key="frame" x="118" y="10" width="281" height="65"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ユーザ名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDa-6x-j1i">
+                        <rect key="frame" x="118" y="75" width="281" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="2E8-hZ-3bk"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZDa-6x-j1i" firstAttribute="top" secondItem="c4W-Wu-yfv" secondAttribute="bottom" id="89G-8c-v9h"/>
+                    <constraint firstItem="ZDa-6x-j1i" firstAttribute="leading" secondItem="c4W-Wu-yfv" secondAttribute="leading" id="90d-48-6sn"/>
+                    <constraint firstItem="haB-Hh-WrW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="HrN-ft-t0G"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ZDa-6x-j1i" secondAttribute="bottom" constant="20" id="MTb-rM-rM3"/>
+                    <constraint firstItem="ZDa-6x-j1i" firstAttribute="leading" secondItem="haB-Hh-WrW" secondAttribute="trailing" constant="8" id="OGN-Fs-9Am"/>
+                    <constraint firstItem="c4W-Wu-yfv" firstAttribute="top" secondItem="haB-Hh-WrW" secondAttribute="top" id="fJ2-ZJ-KB9"/>
+                    <constraint firstItem="ZDa-6x-j1i" firstAttribute="trailing" secondItem="c4W-Wu-yfv" secondAttribute="trailing" id="gCD-hl-vQv"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ZDa-6x-j1i" secondAttribute="trailing" id="m93-SU-3yd"/>
+                    <constraint firstItem="haB-Hh-WrW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="y7V-bP-l3n"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="articleImageView" destination="haB-Hh-WrW" id="AYf-Nx-WYB"/>
+                <outlet property="articleTitleLabel" destination="c4W-Wu-yfv" id="Z7C-nz-34t"/>
+                <outlet property="articleUserIdLabel" destination="ZDa-6x-j1i" id="RYz-rW-8RL"/>
+            </connections>
+            <point key="canvasLocation" x="488.5" y="384"/>
+        </tableViewCell>
+    </objects>
+</document>
