@@ -194,7 +194,7 @@ class ArticleListViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let cell = sender as? ArticleTableViewCell {
+        if let cell = sender as? CustomCellTableViewCell {
             if let webViewConroller = segue.destinationViewController as? WebViewController {
                 // 記事のURLを設定する
                 webViewConroller.articleUrl = cell.articleUrl

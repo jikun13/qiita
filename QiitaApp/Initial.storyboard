@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="At6-Rl-H3C">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--記事一覧-->
+        <scene sceneID="oqq-Vh-LLB">
+            <objects>
+                <tableViewController id="262-ct-HVC" customClass="ArticleListViewController" customModule="QiitaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" id="ngt-YK-LBn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="検索キーワードを入力してください" id="u9x-3J-2CA">
+                            <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="262-ct-HVC" id="A1U-Hm-lUe"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCell" id="jLA-aX-q2M" customClass="CustomCellTableViewCell" customModule="QiitaApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jLA-aX-q2M" id="B7L-bS-gIN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="X5s-lB-9F0" kind="show" id="RuM-eD-iUV"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="262-ct-HVC" id="5TV-Q5-TV6"/>
+                            <outlet property="delegate" destination="262-ct-HVC" id="F2U-89-WHn"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="bi8-DX-alf"/>
+                    <navigationItem key="navigationItem" title="記事一覧" id="KJO-u0-Xct"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8XP-g9-TKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1385.5" y="1850.5"/>
+        </scene>
+        <!--Web-->
+        <scene sceneID="oPN-Lu-tky">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Web" id="X5s-lB-9F0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gP6-fV-Hcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782.5" y="1851"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Cq-Wi-dR8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="At6-Rl-H3C" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="cie-YR-4zu"/>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8kR-gU-O2U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="262-ct-HVC" kind="relationship" relationship="rootViewController" id="rUP-Ec-U15"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyA-cC-3ku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923.5" y="1850.5"/>
+        </scene>
+    </scenes>
+</document>
