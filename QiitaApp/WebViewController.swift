@@ -38,12 +38,6 @@ class WebViewController: UIViewController {
         
         let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         
-//        let excludedActivityTypes = [
-//            UIActivityTypePostToTwitter
-//        ]
-//        
-//        activityViewController.excludedActivityTypes = excludedActivityTypes
-        
         self.presentViewController(activityViewController, animated: true, completion: nil)
 
     }

@@ -200,8 +200,6 @@ class ArticleListViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let nav = segue.destinationViewController as! UINavigationController
-//        let webViewController = nav.topViewController as! WebViewController
         let webViewController = segue.destinationViewController as! WebViewController
         webViewController.articleUrl = sender?.url
     }

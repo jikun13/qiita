@@ -15,11 +15,25 @@ class FavoriteListViewController: UITableViewController {
     var favoriteArticles = [ArticleData]()
     
     var imageCache = NSCache()
+//    var notificationToken: RLMNotificationToken?
+//    var results:RLMResults?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.registerNib(UINib(nibName: "CustomCellTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+        
+        // TODO: ブックマークリストのオートリロード機能を実装する
+//        // RLMResultsオブジェクトをメンバ変数に保持
+//        self.results = Status.allObjects().sortedResultsUsingProperty("createdAt", ascending: false)
+//        self.tableView.reloadData()
+//
+//        notificationToken = RLMRealm.defaultRealm().addNotificationBlock { note, realm in
+//            //ここで通知を受けたタイミングで、self.results オブジェクトは最新の状態を参照できるようになっている。
+//            //そのため、tableViewであればreloadDataすることで最新の状態に更新される。
+//            self.tableView.reloadData()
+//        }
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -101,6 +115,7 @@ class FavoriteListViewController: UITableViewController {
     }
     
     // 記事を左にスワイプするとお気に入り削除ボタンが表示されるようにする
+    // TODO: 削除したときにその場で画面更新がかからないので、削除した記事が残ったままになっているので直す
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         // お気に入り追加ボタン
         let favButton: UITableViewRowAction = UITableViewRowAction(style: .Normal, title: "delete") { (action, index) -> Void in
@@ -112,10 +127,10 @@ class FavoriteListViewController: UITableViewController {
                 
                 if let deleteUrl = self.favoriteArticles[indexPath.row].url {
                     let articles = realm.objects(ArticleData).filter("url = '\(deleteUrl)'")
-                    print(articles)
+//                    print(articles)
                     try realm.write {
                         realm.delete(articles)
-                        print("消すぞー")
+//                        print("消すぞー")
                     }
                 }
             }catch{
