@@ -28,4 +28,8 @@ class CustomCellTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        //再利用時に元々入っている情報をクリア
+        articleImageView.image = nil
+    }
 }

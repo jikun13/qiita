@@ -126,14 +126,16 @@ class FavoriteListViewController: UITableViewController {
         
         return [favButton]
     }
+        
+    //カスタムセルを利用すると、セルからのsegueが無効になるので、didSelectedrowAtIndexPath でsegueを発生させる
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let article = self.favoriteArticles[indexPath.row]
+        self.performSegueWithIdentifier("toWebViewController", sender: article)
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let cell = sender as? FavoriteArticleTableViewCell {
-            if let webViewConroller = segue.destinationViewController as? WebViewController {
-                // 記事のURLを設定する
-                webViewConroller.articleUrl = cell.favoriteArticleUrl
-            }
-        }
+        let webViewController = segue.destinationViewController as! WebViewController
+        webViewController.articleUrl = sender?.url
     }
 
 }
