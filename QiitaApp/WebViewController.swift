@@ -31,4 +31,20 @@ class WebViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func shareButton(sender: AnyObject) {
+        let shareText = ""
+        let shareUrl = NSURL(string: self.articleUrl!)!
+        let activityItems = [shareText, shareUrl]
+        
+        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+//        let excludedActivityTypes = [
+//            UIActivityTypePostToTwitter
+//        ]
+//        
+//        activityViewController.excludedActivityTypes = excludedActivityTypes
+        
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+
+    }
 }

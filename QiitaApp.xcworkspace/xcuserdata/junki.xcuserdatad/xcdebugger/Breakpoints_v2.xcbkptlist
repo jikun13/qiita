@@ -105,7 +105,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QiitaApp/ArticleListViewController.swift"
-            timestampString = "496133600.00253"
+            timestampString = "496289205.182905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -121,7 +121,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QiitaApp/ArticleListViewController.swift"
-            timestampString = "496133600.00253"
+            timestampString = "496289205.182905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -137,7 +137,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QiitaApp/ArticleListViewController.swift"
-            timestampString = "496133600.00253"
+            timestampString = "496289205.182905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -152,12 +152,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QiitaApp/FavoriteListViewController.swift"
-            timestampString = "496137550.033709"
+            filePath = "QiitaApp/ArticleListViewController.swift"
+            timestampString = "496301169.330198"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -165,16 +165,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QiitaApp/ArticleListViewController.swift"
-            timestampString = "496145861.140312"
+            filePath = "QiitaApp/WebViewController.swift"
+            timestampString = "496304368.400561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "prepareForSegue(_:sender:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "shareButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

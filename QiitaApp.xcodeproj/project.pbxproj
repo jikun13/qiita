@@ -11,7 +11,6 @@
 		3A9BD0531D878888001BB384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9BD0521D878888001BB384 /* AppDelegate.swift */; };
 		3A9BD0581D878888001BB384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9BD0561D878888001BB384 /* Main.storyboard */; };
 		3A9BD05A1D878888001BB384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9BD0591D878888001BB384 /* Assets.xcassets */; };
-		3A9BD05D1D878888001BB384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9BD05B1D878888001BB384 /* LaunchScreen.storyboard */; };
 		3AD362B01D891EF100E88B02 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD362AF1D891EF100E88B02 /* WebViewController.swift */; };
 		3AD9B6C21D87B6DA00871551 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD9B6C11D87B6DA00871551 /* Alamofire.framework */; };
 		3AD9B6C41D87B6E000871551 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD9B6C31D87B6E000871551 /* SwiftyJSON.framework */; };
@@ -22,7 +21,7 @@
 		3AECAFBC1D921D1200395F27 /* CustomCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AECAFBA1D921D1200395F27 /* CustomCellTableViewCell.xib */; };
 		3AECAFBE1D92709F00395F27 /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AECAFBD1D92709F00395F27 /* Favorite.storyboard */; };
 		3AECAFC01D92718C00395F27 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AECAFBF1D92718C00395F27 /* Initial.storyboard */; };
-		3AECAFC21D92721C00395F27 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AECAFC11D92721C00395F27 /* Web.storyboard */; };
+		3AECAFC51D94E2B900395F27 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AECAFC41D94E2B900395F27 /* Web.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		3A9BD0521D878888001BB384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A9BD0571D878888001BB384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A9BD0591D878888001BB384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3A9BD05C1D878888001BB384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A9BD05E1D878888001BB384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AD362AF1D891EF100E88B02 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3AD9B6C11D87B6DA00871551 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/QiitaApp-bkwqmbtyucadtdfogpyavlvtvyzt/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
@@ -43,7 +41,7 @@
 		3AECAFBA1D921D1200395F27 /* CustomCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCellTableViewCell.xib; sourceTree = "<group>"; };
 		3AECAFBD1D92709F00395F27 /* Favorite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
 		3AECAFBF1D92718C00395F27 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
-		3AECAFC11D92721C00395F27 /* Web.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
+		3AECAFC41D94E2B900395F27 /* Web.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
 		90E9A97FA29A7793FE6B9D8A /* Pods_QiitaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QiitaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08DD86005A93A8DE486C850 /* Pods-QiitaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiitaApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QiitaApp/Pods-QiitaApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,8 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				3AECAFC31D927E0500395F27 /* Storyboard */,
-				3AE724801D87EA04007F3D86 /* ArticleData.swift */,
 				3A9BD0521D878888001BB384 /* AppDelegate.swift */,
+				3AE724801D87EA04007F3D86 /* ArticleData.swift */,
 				3AECAFB91D921D1200395F27 /* CustomCellTableViewCell.swift */,
 				3AE7247D1D87D7D2007F3D86 /* ArticleListViewController.swift */,
 				3AE787F11D8A8F5D00AE5B59 /* FavoriteListViewController.swift */,
@@ -109,11 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				3AECAFBA1D921D1200395F27 /* CustomCellTableViewCell.xib */,
+				3AECAFC41D94E2B900395F27 /* Web.storyboard */,
 				3A9BD0561D878888001BB384 /* Main.storyboard */,
-				3AECAFC11D92721C00395F27 /* Web.storyboard */,
 				3AECAFBF1D92718C00395F27 /* Initial.storyboard */,
 				3AECAFBD1D92709F00395F27 /* Favorite.storyboard */,
-				3A9BD05B1D878888001BB384 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -190,13 +187,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A9BD05D1D878888001BB384 /* LaunchScreen.storyboard in Resources */,
 				3A9BD05A1D878888001BB384 /* Assets.xcassets in Resources */,
 				3AECAFBC1D921D1200395F27 /* CustomCellTableViewCell.xib in Resources */,
 				3AECAFC01D92718C00395F27 /* Initial.storyboard in Resources */,
-				3AECAFC21D92721C00395F27 /* Web.storyboard in Resources */,
 				3AECAFBE1D92709F00395F27 /* Favorite.storyboard in Resources */,
 				3A9BD0581D878888001BB384 /* Main.storyboard in Resources */,
+				3AECAFC51D94E2B900395F27 /* Web.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,14 +269,6 @@
 				3A9BD0571D878888001BB384 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3A9BD05B1D878888001BB384 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A9BD05C1D878888001BB384 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

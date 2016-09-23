@@ -193,12 +193,16 @@ class ArticleListViewController: UITableViewController, UISearchBarDelegate {
         return [favButton]
     }
     
+    //カスタムセルを利用すると、セルからのsegueが無効になるので、didSelectedrowAtIndexPath でsegueを発生させる
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let article = self.articles[indexPath.row]
+        self.performSegueWithIdentifier("toWebViewController", sender: article)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let cell = sender as? CustomCellTableViewCell {
-            if let webViewConroller = segue.destinationViewController as? WebViewController {
-                // 記事のURLを設定する
-                webViewConroller.articleUrl = cell.articleUrl
-            }
-        }
+//        let nav = segue.destinationViewController as! UINavigationController
+//        let webViewController = nav.topViewController as! WebViewController
+        let webViewController = segue.destinationViewController as! WebViewController
+        webViewController.articleUrl = sender?.url
     }
 }

@@ -22,7 +22,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ePn-p8-rBJ" kind="show" id="XLi-zq-CdU"/>
+                                    <segue destination="ePn-p8-rBJ" kind="show" identifier="toWebViewController" id="XLi-zq-CdU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -31,7 +31,9 @@
                             <outlet property="delegate" destination="K1n-yC-CuG" id="f0c-58-ByQ"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="kBZ-Ml-obc"/>
                     <navigationItem key="navigationItem" title="お気に入り" id="GT6-Vi-0Kd" userLabel="お気に入り"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2CX-kr-jkr" userLabel="First Responder" sceneMemberID="firstResponder"/>
